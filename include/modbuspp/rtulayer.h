@@ -38,7 +38,7 @@ namespace Modbus {
    * @author Pascal JEAN, aka epsilonrt
    * @copyright GNU Lesser General Public License
    */
-  class RtuLayer : public NetLayer {
+  class MODBUS_API RtuLayer : public NetLayer {
     public:
 
       /**

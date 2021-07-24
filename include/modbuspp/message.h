@@ -24,10 +24,10 @@
 #include <modbuspp/data.h>
 
 namespace Modbus {
-  class Device;
-  class NetLayer;
-  class Request;
-  class Response;
+  class MODBUS_API Device;
+  class MODBUS_API NetLayer;
+  class MODBUS_API Request;
+  class MODBUS_API Response;
 
   /**
    * @class Message
@@ -36,10 +36,10 @@ namespace Modbus {
    * @author Pascal JEAN, aka epsilonrt
    * @copyright GNU Lesser General Public License
    */
-  class Message  {
+  class MODBUS_API Message  {
     public:
 
-      friend class Device;
+      friend class MODBUS_API Device;
       /**
        * @brief Message callback function
        * @param msg

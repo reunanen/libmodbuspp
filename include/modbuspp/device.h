@@ -22,10 +22,10 @@
 
 namespace Modbus {
 
-  class NetLayer;
-  class RtuLayer;
-  class TcpLayer;
-  class Message;
+  class MODBUS_API NetLayer;
+  class MODBUS_API RtuLayer;
+  class MODBUS_API TcpLayer;
+  class MODBUS_API Message;
 
   /**
    * @class Device
@@ -37,7 +37,7 @@ namespace Modbus {
    * @author Pascal JEAN, aka epsilonrt
    * @copyright GNU Lesser General Public License
    */
-  class Device  {
+  class MODBUS_API Device  {
     public:
       /**
        * @brief Constructor

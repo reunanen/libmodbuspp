@@ -22,7 +22,7 @@
 #include <modbuspp/slavereport.h>
 
 namespace Modbus {
-  class Device;
+  class MODBUS_API Device;
   
  /**
    * @class Slave
@@ -31,7 +31,7 @@ namespace Modbus {
    * @author Pascal JEAN, aka epsilonrt
    * @copyright GNU Lesser General Public License
    */
-  class Slave {
+  class MODBUS_API Slave {
 
     public:
 

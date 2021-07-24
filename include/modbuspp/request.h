@@ -27,7 +27,7 @@ namespace Modbus {
    * @author Pascal JEAN, aka epsilonrt
    * @copyright GNU Lesser General Public License
    */
-  class Request : public Message  {
+  class MODBUS_API Request : public Message  {
     public:
 
       /**

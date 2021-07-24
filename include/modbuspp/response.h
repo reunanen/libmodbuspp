@@ -19,7 +19,7 @@
 #include <modbuspp/message.h>
 
 namespace Modbus {
-  class Request;
+  class MODBUS_API Request;
   
   /**
    * @class Response
@@ -28,7 +28,7 @@ namespace Modbus {
    * @author Pascal JEAN, aka epsilonrt
    * @copyright GNU Lesser General Public License
    */
-  class Response : public Message  {
+  class MODBUS_API Response : public Message  {
     public:
 
       /**

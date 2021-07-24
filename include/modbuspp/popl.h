@@ -88,8 +88,8 @@ namespace popl {
    * holds just configuration data, no runtime data.
    * Option is not bound to a special type "T"
    */
-  class Option {
-      friend class OptionParser;
+  class MODBUS_API Option {
+      friend class MODBUS_API OptionParser;
     public:
       /// Construct an Option
       /// @param short_name the options's short name. Must be empty or one character.
@@ -179,7 +179,7 @@ namespace popl {
    * If set, it requires an argument
    */
   template<class T>
-  class Value : public Option {
+  class MODBUS_API Value : public Option {
     public:
       /// Construct an Value Option
       /// @param short_name the option's short name. Must be empty or one character.
@@ -249,7 +249,7 @@ namespace popl {
    * -with argument it carries the explicit value
    */
   template<class T>
-  class Implicit : public Value<T> {
+  class MODBUS_API Implicit : public Value<T> {
     public:
       Implicit (const std::string& short_name, const std::string& long_name, const std::string& description, const T& implicit_val, T* assign_to = nullptr);
 
@@ -268,7 +268,7 @@ namespace popl {
    * Does not require an argument
    * Can be either set or not set
    */
-  class Switch : public Value<bool> {
+  class MODBUS_API Switch : public Value<bool> {
     public:
       Switch (const std::string& short_name, const std::string& long_name, const std::string& description, bool* assign_to = nullptr);
 
@@ -291,7 +291,7 @@ namespace popl {
    * Call "parse(argc, argv)" to trigger parsing of the options and to
    * fill "non_option_args" and "unknown_options"
    */
-  class OptionParser {
+  class MODBUS_API OptionParser {
     public:
       /// Construct the OptionParser
       /// @param description used for the help message
@@ -366,7 +366,7 @@ namespace popl {
 
 
 
-  class invalid_option : public std::invalid_argument {
+  class MODBUS_API invalid_option : public std::invalid_argument {
     public:
       enum class Error {
         missing_argument,
@@ -412,7 +412,7 @@ namespace popl {
   /**
    * OptionPrinter creates a help message for a given OptionParser
    */
-  class OptionPrinter {
+  class MODBUS_API OptionPrinter {
     public:
       /// Constructor
       /// @param option_parser the OptionParser to create the help message from
@@ -439,7 +439,7 @@ namespace popl {
    * Standard console option printer
    * Creates a human readable help message
    */
-  class ConsoleOptionPrinter : public OptionPrinter {
+  class MODBUS_API ConsoleOptionPrinter : public OptionPrinter {
     public:
       explicit ConsoleOptionPrinter (const OptionParser* option_parser);
       ~ConsoleOptionPrinter() override = default;
@@ -457,7 +457,7 @@ namespace popl {
   /**
    * Creates help messages in groff format that can be used in man pages
    */
-  class GroffOptionPrinter : public OptionPrinter {
+  class MODBUS_API GroffOptionPrinter : public OptionPrinter {
     public:
       explicit GroffOptionPrinter (const OptionParser* option_parser);
       ~GroffOptionPrinter() override = default;
@@ -475,7 +475,7 @@ namespace popl {
   /**
    * Creates a script with all options (short and long) that can be used for bash completion
    */
-  class BashCompletionOptionPrinter : public OptionPrinter {
+  class MODBUS_API BashCompletionOptionPrinter : public OptionPrinter {
     public:
       BashCompletionOptionPrinter (const OptionParser* option_parser, std::string program_name);
       ~BashCompletionOptionPrinter() override = default;

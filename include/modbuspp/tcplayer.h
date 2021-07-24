@@ -38,7 +38,7 @@ namespace Modbus {
    * @sa Device::Device()
    * @sa Device::tcp()
    */
-  class TcpLayer : public NetLayer {
+  class MODBUS_API TcpLayer : public NetLayer {
 
   public:
       /**

@@ -28,11 +28,11 @@
 
 namespace Modbus {
 
-  class Slave;
-  class BufferedSlave;
-  class Message;
-  class Request;
-  class Response;
+  class MODBUS_API Slave;
+  class MODBUS_API BufferedSlave;
+  class MODBUS_API Message;
+  class MODBUS_API Request;
+  class MODBUS_API Response;
 
   /**
    * @class Data
@@ -219,11 +219,11 @@ namespace Modbus {
         print ( (const uint8_t *) m_registers.data(), size());
       }
 
-      friend class Slave;
-      friend class BufferedSlave;
-      friend class Message;
-      friend class Request;
-      friend class Response;
+      friend class MODBUS_API Slave;
+      friend class MODBUS_API BufferedSlave;
+      friend class MODBUS_API Message;
+      friend class MODBUS_API Request;
+      friend class MODBUS_API Response;
 
     protected:
 
@@ -268,7 +268,7 @@ namespace Modbus {
    * @file data.h
    * @brief Data type helper class
    */
-  class DataType {
+  class MODBUS_API DataType {
     public:
       /**
        * @brief Constructor from a value of DataEnum

@@ -46,7 +46,7 @@ namespace Modbus {
     * @author Pascal JEAN, aka epsilonrt
     * @copyright GNU Lesser General Public License
     */
-  class Router : public Server {
+  class MODBUS_API Router : public Server {
 
     public:
       /**

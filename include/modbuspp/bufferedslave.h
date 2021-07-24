@@ -22,7 +22,7 @@
 
 namespace Modbus {
 
-  class Request;
+  class MODBUS_API Request;
 
   /**
     * @class BufferedSlave
@@ -31,7 +31,7 @@ namespace Modbus {
     * @author Pascal JEAN, aka epsilonrt
     * @copyright GNU Lesser General Public License
     */
-  class BufferedSlave : public Slave {
+  class MODBUS_API BufferedSlave : public Slave {
 
     public:
 

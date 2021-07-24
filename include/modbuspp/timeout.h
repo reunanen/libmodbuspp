@@ -27,7 +27,7 @@ namespace Modbus {
    * @author Pascal JEAN, aka epsilonrt
    * @copyright GNU Lesser General Public License
    */
-  class Timeout {
+  class MODBUS_API Timeout {
     public:
 
       /**
@@ -87,7 +87,7 @@ namespace Modbus {
         return m_usec;
       }
 
-      friend class Device;
+      friend class MODBUS_API Device;
 
     private:
       uint32_t m_sec;

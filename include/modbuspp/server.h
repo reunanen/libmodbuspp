@@ -62,7 +62,7 @@ namespace Modbus {
     * @author Pascal JEAN, aka epsilonrt
     * @copyright GNU Lesser General Public License
     */
-  class Server : public Device {
+  class MODBUS_API Server : public Device {
 
     public:
       /**

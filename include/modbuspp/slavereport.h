@@ -26,7 +26,7 @@ namespace Modbus {
    * @brief For storing and manipulate server identifier datas returns by the MODBUS 17 function
    */
   template <typename T, Endian e = EndianBig>
-  class SlaveReport {
+  class MODBUS_API SlaveReport {
 
   public:
       /**
@@ -105,7 +105,7 @@ namespace Modbus {
         return m_size;
       }
 
-      friend class Slave;
+      friend class MODBUS_API Slave;
 
     protected:
       Endian m_endian;

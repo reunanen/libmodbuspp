@@ -21,7 +21,7 @@
 #include <modbuspp/global.h>
 
 namespace Modbus {
-  class Message;
+  class MODBUS_API Message;
   
   /**
    * @class NetLayer
@@ -30,7 +30,7 @@ namespace Modbus {
    * @author Pascal JEAN, aka epsilonrt
    * @copyright GNU Lesser General Public License
    */
-  class NetLayer  {
+  class MODBUS_API NetLayer  {
     public:
 
       /**
