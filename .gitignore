@@ -13,3 +13,6 @@ version.h
 config.h
 *build-*/
 work/
+/visualstudio/libmodbuspp.vcxproj.user
+/visualstudio/x64/Debug
+/visualstudio/x64/Release
