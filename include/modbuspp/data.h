@@ -370,7 +370,7 @@ namespace Modbus {
         std::is_same<T, uint64_t>::value) {
       unsigned long long ull = std::stoull (str, &idx, base);
 
-      if (ull > std::numeric_limits<T>::max()) {
+      if (ull > (std::numeric_limits<T>::max)()) {
         throw std::out_of_range (str);
       }
       v = static_cast<T> (ull);
@@ -379,7 +379,7 @@ namespace Modbus {
              || std::is_same<T, int64_t>::value) {
       unsigned long long ll = std::stoll (str, &idx, base);
 
-      if (ll > std::numeric_limits<T>::max()
+      if (ll > (std::numeric_limits<T>::max)()
           || ll < std::numeric_limits<T>::lowest()) {
         throw std::out_of_range (str);
       }
@@ -389,7 +389,7 @@ namespace Modbus {
              std::is_same<T, double>::value) {
       long double ld = std::stold (str, &idx);
 
-      if (ld > std::numeric_limits<T>::max() ||
+      if (ld > (std::numeric_limits<T>::max)() ||
           ld < std::numeric_limits<T>::lowest()) {
 
         throw std::out_of_range (str);

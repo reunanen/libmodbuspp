@@ -174,7 +174,7 @@ namespace Modbus {
 
     d->adu[index++] = value >> 8;
     d->adu[index++] = value & 0xFF;
-    d->aduSize = std::max (d->aduSize, index);
+    d->aduSize = (std::max)(d->aduSize, index);
   }
 
   // ---------------------------------------------------------------------------
@@ -183,7 +183,7 @@ namespace Modbus {
     size_t index = d->pduBegin + pduOffset;
 
     d->adu[index++] = value;
-    d->aduSize = std::max (d->aduSize, index);
+    d->aduSize = (std::max)(d->aduSize, index);
   }
 
   // ---------------------------------------------------------------------------

@@ -105,10 +105,10 @@ namespace Modbus {
         switch (req->function()) {
 
           case ReadCoils: {
-            start = std::max (start, d->map->start_bits);
-            start = std::min (start, d->map->start_bits + d->map->nb_bits - 1);
+            start = (std::max)(start, d->map->start_bits);
+            start = (std::min)(start, d->map->start_bits + d->map->nb_bits - 1);
             offset = start - d->map->start_bits;
-            nb = std::min (nb, (d->map->nb_bits - offset));
+            nb = (std::min)(nb, (d->map->nb_bits - offset));
             bool * dest = reinterpret_cast <bool *> (&d->map->tab_bits[offset]);
 
             return Slave::readCoils (start + pduAddressing() ? 0 : 1, dest, nb);
@@ -116,10 +116,10 @@ namespace Modbus {
           break;
 
           case ReadDiscreteInputs: {
-            start = std::max (start, d->map->start_input_bits);
-            start = std::min (start, d->map->start_input_bits + d->map->nb_input_bits - 1);
+            start = (std::max)(start, d->map->start_input_bits);
+            start = (std::min)(start, d->map->start_input_bits + d->map->nb_input_bits - 1);
             offset = start - d->map->start_input_bits;
-            nb = std::min (nb, (d->map->nb_input_bits - offset));
+            nb = (std::min)(nb, (d->map->nb_input_bits - offset));
             bool * dest = reinterpret_cast <bool *> (&d->map->tab_input_bits[offset]);
 
             return Slave::readDiscreteInputs (start + pduAddressing() ? 0 : 1, dest, nb);
@@ -127,10 +127,10 @@ namespace Modbus {
           break;
 
           case ReadHoldingRegisters: {
-            start = std::max (start, d->map->start_registers);
-            start = std::min (start, d->map->start_registers + d->map->nb_registers - 1);
+            start = (std::max)(start, d->map->start_registers);
+            start = (std::min)(start, d->map->start_registers + d->map->nb_registers - 1);
             offset = start - d->map->start_registers;
-            nb = std::min (nb, (d->map->nb_registers - offset));
+            nb = (std::min)(nb, (d->map->nb_registers - offset));
             uint16_t * dest = &d->map->tab_registers[offset];
 
             return Slave::readRegisters (start + pduAddressing() ? 0 : 1, dest, nb);
@@ -138,10 +138,10 @@ namespace Modbus {
           break;
 
           case ReadInputRegisters: {
-            start = std::max (start, d->map->start_input_registers);
-            start = std::min (start, d->map->start_input_registers + d->map->nb_input_registers - 1);
+            start = (std::max)(start, d->map->start_input_registers);
+            start = (std::min)(start, d->map->start_input_registers + d->map->nb_input_registers - 1);
             offset = start - d->map->start_input_registers;
-            nb = std::min (nb, (d->map->nb_input_registers - offset));
+            nb = (std::min)(nb, (d->map->nb_input_registers - offset));
             uint16_t * dest = &d->map->tab_input_registers[offset];
 
             return Slave::readInputRegisters (start + pduAddressing() ? 0 : 1, dest, nb);
@@ -194,8 +194,8 @@ namespace Modbus {
         switch (req->function()) {
 
           case WriteSingleCoil: {
-            start = std::max (start, d->map->start_bits);
-            start = std::min (start, d->map->start_bits + d->map->nb_bits - 1);
+            start = (std::max)(start, d->map->start_bits);
+            start = (std::min)(start, d->map->start_bits + d->map->nb_bits - 1);
             offset = start - d->map->start_bits;
 
             return Slave::writeCoil (start + pduAddressing() ? 0 : 1, d->map->tab_bits[offset] != 0);
@@ -203,10 +203,10 @@ namespace Modbus {
           break;
 
           case WriteMultipleCoils: {
-            start = std::max (start, d->map->start_bits);
-            start = std::min (start, d->map->start_bits + d->map->nb_bits - 1);
+            start = (std::max)(start, d->map->start_bits);
+            start = (std::min)(start, d->map->start_bits + d->map->nb_bits - 1);
             offset = start - d->map->start_bits;
-            nb = std::min (nb, (d->map->nb_bits - offset));
+            nb = (std::min)(nb, (d->map->nb_bits - offset));
             bool * src = reinterpret_cast <bool *> (&d->map->tab_bits[offset]);
 
             return Slave::writeCoils (start + pduAddressing() ? 0 : 1, src, nb);
@@ -214,8 +214,8 @@ namespace Modbus {
           break;
 
           case WriteSingleRegister: {
-            start = std::max (start, d->map->start_registers);
-            start = std::min (start, d->map->start_registers + d->map->nb_registers - 1);
+            start = (std::max)(start, d->map->start_registers);
+            start = (std::min)(start, d->map->start_registers + d->map->nb_registers - 1);
             offset = start - d->map->start_registers;
 
             return Slave::writeRegister (start + pduAddressing() ? 0 : 1, d->map->tab_registers[offset]);
@@ -223,10 +223,10 @@ namespace Modbus {
           break;
 
           case WriteMultipleRegisters: {
-            start = std::max (start, d->map->start_registers);
-            start = std::min (start, d->map->start_registers + d->map->nb_registers - 1);
+            start = (std::max)(start, d->map->start_registers);
+            start = (std::min)(start, d->map->start_registers + d->map->nb_registers - 1);
             offset = start - d->map->start_registers;
-            nb = std::min (nb, (d->map->nb_registers - offset));
+            nb = (std::min)(nb, (d->map->nb_registers - offset));
             uint16_t * src = &d->map->tab_registers[offset];
 
             return Slave::writeRegisters (start + pduAddressing() ? 0 : 1, src, nb);
@@ -260,7 +260,7 @@ namespace Modbus {
       int offset = pduAddr - d->map->start_bits;
       uint8_t * src = &d->map->tab_bits[offset];
 
-      nb = std::min (nb, (d->map->nb_bits - offset));
+      nb = (std::min)(nb, (d->map->nb_bits - offset));
 
       if (isOpen()) {
         int rc = Slave::readCoils (addr, (bool *) src, nb);
@@ -288,7 +288,7 @@ namespace Modbus {
       int offset = pduAddr - d->map->start_input_bits;
       uint8_t * src = &d->map->tab_input_bits[offset];
 
-      nb = std::min (nb, (d->map->nb_input_bits - offset));
+      nb = (std::min)(nb, (d->map->nb_input_bits - offset));
 
       if (isOpen()) {
         int rc = Slave::readDiscreteInputs (addr, (bool *) src, nb);
@@ -317,7 +317,7 @@ namespace Modbus {
       int offset = pduAddr - d->map->start_registers;
       uint16_t * src = &d->map->tab_registers[offset];
 
-      nb = std::min (nb, (d->map->nb_registers - offset));
+      nb = (std::min)(nb, (d->map->nb_registers - offset));
 
       if (isOpen()) {
         int rc = Slave::readRegisters (addr, src, nb);
@@ -345,7 +345,7 @@ namespace Modbus {
       int offset = pduAddr - d->map->start_input_registers;
       uint16_t * src = &d->map->tab_input_registers[offset];
 
-      nb = std::min (nb, (d->map->nb_input_registers - offset));
+      nb = (std::min)(nb, (d->map->nb_input_registers - offset));
 
       if (isOpen()) {
         int rc = Slave::readInputRegisters (addr, src, nb);
@@ -374,7 +374,7 @@ namespace Modbus {
       int offset = pduAddr - d->map->start_bits;
       uint8_t * dest = &d->map->tab_bits[offset];
 
-      nb = std::min (nb, (d->map->nb_bits - offset));
+      nb = (std::min)(nb, (d->map->nb_bits - offset));
 
       memcpy (dest, src, nb * sizeof (dest[0]));
       if (isOpen()) {
@@ -414,7 +414,7 @@ namespace Modbus {
       int offset = pduAddr - d->map->start_registers;
       uint16_t * dest = &d->map->tab_registers[offset];
 
-      nb = std::min (nb, (d->map->nb_registers - offset));
+      nb = (std::min)(nb, (d->map->nb_registers - offset));
 
       memcpy (dest, src, nb * sizeof (dest[0]));
       if (isOpen()) {
@@ -458,8 +458,8 @@ namespace Modbus {
       uint16_t * destRead = &d->map->tab_registers[offsetRead];
       uint16_t * srcWrite = &d->map->tab_registers[offsetWrite];
 
-      read_nb = std::min (read_nb, (d->map->nb_registers - offsetRead));
-      write_nb = std::min (write_nb, (d->map->nb_registers - offsetWrite));
+      read_nb = (std::min)(read_nb, (d->map->nb_registers - offsetRead));
+      write_nb = (std::min)(write_nb, (d->map->nb_registers - offsetWrite));
 
       memcpy (srcWrite, write_src, write_nb * sizeof (srcWrite[0]));
       if (isOpen()) {
@@ -495,7 +495,7 @@ namespace Modbus {
       }
       d->idReport.resize (rc);
     }
-    max_dest = std::min (max_dest, static_cast<uint16_t> (d->idReport.size()));
+    max_dest = (std::min)(max_dest, static_cast<uint16_t> (d->idReport.size()));
     memcpy (dest, d->idReport.data(), max_dest);
     return max_dest;
   }
@@ -511,7 +511,7 @@ namespace Modbus {
       int offset = addr - d->map->start_input_bits;
       uint8_t * dest = &d->map->tab_input_bits[offset];
 
-      nb = std::min (nb, (d->map->nb_input_bits - offset));
+      nb = (std::min)(nb, (d->map->nb_input_bits - offset));
       memcpy (dest, src, nb * sizeof (dest[0]));
       return nb;
     }
@@ -536,7 +536,7 @@ namespace Modbus {
       int offset = addr - d->map->start_input_registers;
       uint16_t * dest = &d->map->tab_input_registers[offset];
 
-      nb = std::min (nb, (d->map->nb_input_registers - offset));
+      nb = (std::min)(nb, (d->map->nb_input_registers - offset));
       memcpy (dest, src, nb * sizeof (dest[0]));
       return nb;
     }
@@ -1045,13 +1045,13 @@ namespace Modbus {
           auto str = v.get<std::string>();
 
           unsigned long ul = stoul (str, &idx, 0);
-          if (idx < str.size() || ul > std::numeric_limits<uint8_t>::max()) {
+          if (idx < str.size() || ul > (std::numeric_limits<uint8_t>::max)()) {
             throw std::invalid_argument (
               "Cannot convert " + str +
               " to a byte, value must be between 0 and 0xFF");
           }
 
-          int m = std::min (nmemb, 8);
+          int m = (std::min)(nmemb, 8);
           uint8_t byte = ul;
 
           for (int i = 0; i < m; i++) {

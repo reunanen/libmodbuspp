@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="libmodbuspp">
+      <UniqueIdentifier>{14505cab-b41a-4df8-b2d6-76af5108a971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libmodbus">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\bufferedslave.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\device.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\master.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\message.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\netlayer.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\request.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\response.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\router.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\rtulayer.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\server.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\slave.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tcplayer.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\timeout.cpp">
+      <Filter>libmodbuspp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libmodbus\src\modbus.c">
+      <Filter>libmodbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libmodbus\src\modbus-data.c">
+      <Filter>libmodbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libmodbus\src\modbus-rtu.c">
+      <Filter>libmodbus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libmodbus\src\modbus-tcp.c">
+      <Filter>libmodbus</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\tcplayer_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\bufferedslave_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\device_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\json_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\master_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\message_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\netlayer_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\request_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\response_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\router_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\rtulayer_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\server_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\slave_p.h">
+      <Filter>libmodbuspp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libmodbus\src\modbus.h">
+      <Filter>libmodbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libmodbus\src\modbus-private.h">
+      <Filter>libmodbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libmodbus\src\modbus-rtu.h">
+      <Filter>libmodbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libmodbus\src\modbus-rtu-private.h">
+      <Filter>libmodbus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libmodbus\src\modbus-tcp.h">
+      <Filter>libmodbus</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

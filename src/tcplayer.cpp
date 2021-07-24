@@ -59,7 +59,7 @@ namespace Modbus {
   int TcpLayer::sendRawMessage (const Message * msg) {
     PIMP_D (TcpLayer);
 
-    return send (modbus_get_socket (d->ctx), msg->adu(), msg->aduSize(),
+    return send (modbus_get_socket (d->ctx), reinterpret_cast<const char*>(msg->adu()), msg->aduSize(),
                  MSG_NOSIGNAL);
   }
 
